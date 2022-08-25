@@ -12,7 +12,7 @@ const createUser = (req, res) => {
     id: uuidv4(),
     name: req.body.name,
     email: req.body.email,
-    msg: req.body.email,
+    msg: req.body.msg,
   };
   users.push(newUser);
   res.status(201).json(users);
