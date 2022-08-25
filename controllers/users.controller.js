@@ -15,6 +15,7 @@ const createUser = (req, res) => {
     msg: req.body.msg,
   };
   users.push(newUser);
+  res.end();
   
 };
 
