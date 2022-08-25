@@ -2,7 +2,7 @@ let users = require("../models/users.model");
 const { v4: uuidv4 } = require("uuid");
 
 // get users
-const getAllUsesr = (req, res) => {
+const getAllUsesr = (req, res) => { 
   res.status(200).json({ users });
 };
 
@@ -15,7 +15,6 @@ const createUser = (req, res) => {
     msg: req.body.msg,
   };
   users.push(newUser);
-  res.status(201).json(users);
 };
 
 // update user
