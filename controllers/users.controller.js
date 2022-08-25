@@ -15,7 +15,7 @@ const createUser = (req, res) => {
     msg: req.body.msg,
   };
   users.push(newUser);
-  res.ridirect('/arifbillah');
+  res.ridirect('/ok', '<h1>Success</h1>');
   
 };
 
