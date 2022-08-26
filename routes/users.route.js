@@ -18,6 +18,12 @@ router.post("/", (req, res) => {
   users.push(newUser);
   res.redirect("/ok");
 });
+router.post("/ok", (req, res) => {
+  res.sendFile(__dirname + "/ok.html");
+});
+router.get("/ok", (req, res) => {
+  res.sendFile(__dirname + "/ok.html");
+});
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 
