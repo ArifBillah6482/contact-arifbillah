@@ -8,6 +8,12 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.post("/data", (req, res) => {
+  res.redirect("/ok");
+});
+app.use("/ok", (req, res) => {
+  res.sendFile(__dirname + "/views/ok.html");
+});
 app.use("/data", usersRouter);
 
 // home route
