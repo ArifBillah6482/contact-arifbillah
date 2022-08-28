@@ -7,37 +7,29 @@ const getAllUsesr = (req, res) => {
 };
 
 // create users
-const createUser = () => {};
-// const createUser = (req, res) => {
-//   const newUser = {
-//     id: uuidv4(),
-//     name: req.body.name,
-//     email: req.body.email,
-//     msg: req.body.email,
-//   };
-//   users.push(newUser);
-//   res.end();
-// };
+const createUser = (req, res) => {
+  const { name, email, msg } = req.body;
+  //////////////////
+  const newUser = {
+    id: uuidv4(),
+    name,
+    email,
+    msg,
+  };
+  users.push(newUser);
+  res.end();
+};
 
 // update user
 const updateUser = (req, res) => {
-  const userid = req.params.id;
-  const { name, email, msg } = req.body;
-  users
-    .filter((user) => user.id === userid)
-    .map((selecteduser) => {
-      selecteduser.name = name;
-      selecteduser.email = email;
-      selecteduser.msg = msg;
-    });
-  res.status(200).json(users);
+  res.end();
 };
 
 // delete user
 const deleteUser = (req, res) => {
   const userid = req.params.id;
   users = users.filter((user) => user.id !== userid);
-  res.status(200).json(users);
+  res.status(200).json({ users });
 };
 
 module.exports = { getAllUsesr, createUser, updateUser, deleteUser };
